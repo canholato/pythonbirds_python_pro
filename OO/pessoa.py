@@ -1,18 +1,24 @@
 class Pessoa:
-    def __init__(self, nome=None, idade=35):
+    def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
+        self.filhos = list(filhos)
+
 
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
 if __name__ == '__main__':
-    p = Pessoa('Marília')
-    print(Pessoa.cumprimentar(p))
-    print(id(p))
-    print(p.cumprimentar())
-    print('teste de conexão do VS Code')
-    print(p.nome)
-    p.nome = 'Gilson'
-    print(p.nome)
-    print(p.idade)
+    gilson = Pessoa(nome='Gilson')
+    marcos = Pessoa(nome='Marcos')
+    margareth = Pessoa(nome='Margareth')
+    eduardo = Pessoa(nome='Eduardo')
+    maria_jose = Pessoa(gilson, marcos, margareth, eduardo, nome='Maria José')
+    print(Pessoa.cumprimentar(maria_jose))
+    print(id(maria_jose))
+    print(maria_jose.cumprimentar())
+    print(maria_jose.nome)
+    print(maria_jose.idade)
+    print(maria_jose.filhos)
+    for filho in maria_jose.filhos:
+        print(filho.nome)

@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
@@ -23,5 +25,12 @@ if __name__ == '__main__':
         print(filho.nome)
     gilson.sobrenome = 'Nogueira'
     del gilson.filhos
+    gilson.olhos = 1
+    del gilson.olhos
     print(gilson.__dict__)
     print(marcos.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(gilson.olhos)
+    print(marcos.olhos)
+    print(id(Pessoa.olhos), id(gilson.olhos), id(marcos.olhos))

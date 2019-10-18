@@ -4,7 +4,6 @@ class Pessoa:
         self.nome = nome
         self.filhos = list(filhos)
 
-
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
@@ -22,3 +21,7 @@ if __name__ == '__main__':
     print(maria_jose.filhos)
     for filho in maria_jose.filhos:
         print(filho.nome)
+    gilson.sobrenome = 'Nogueira'
+    del gilson.filhos
+    print(gilson.__dict__)
+    print(marcos.__dict__)

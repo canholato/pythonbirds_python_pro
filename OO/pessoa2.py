@@ -7,3 +7,7 @@ if __name__== ' __main__':
     print(Pessoa.cumprimentar(p))
     print(id(p))
     print(p.cumprimentar())
+    print(p.nome)
+    p.nome = 'Marcio'
+    print(p.nome)
+    print(p.idade)
